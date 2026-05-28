@@ -72,7 +72,7 @@ export async function POST(req: NextRequest) {
           </a>
         </div>
         <p style="text-align: center; color: #bbb; font-size: 11px; margin-top: 20px;">
-          NS Beach Volleyball Club · beachvolleyns.vercel.app
+          NS Beach Volleyball Club · beachvolleyballclubns@gmail.com
         </p>
       </div>
     `,

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Mail, MapPin, Send, CheckCircle } from 'lucide-react';
+import { createClient } from '@/lib/supabase/client';
 
 function InstagramIcon({ size = 22, className = '' }: { size?: number; className?: string }) {
   return (
@@ -21,8 +22,15 @@ export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [sent, setSent] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const supabase = createClient();
+    await supabase.from('contact_submissions').insert({
+      name: form.name,
+      email: form.email,
+      message: form.message,
+      read: false,
+    });
     setSent(true);
   };
 

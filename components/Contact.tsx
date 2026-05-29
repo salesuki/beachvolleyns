@@ -37,7 +37,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-20 lg:py-28 relative overflow-hidden"
+      className="py-10 lg:py-16 scroll-mt-20 relative overflow-hidden"
       style={{ background: 'linear-gradient(180deg, #FFFDF7 0%, #F5E6C8 100%)' }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -46,7 +46,7 @@ export default function Contact() {
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="w-8 h-0.5 bg-gold" aria-hidden="true" />
             <span
-              className="text-ocean text-sm font-bold uppercase tracking-widest"
+              className="text-ocean text-base font-bold uppercase tracking-widest"
               style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
             >
               {c.sectionLabel}

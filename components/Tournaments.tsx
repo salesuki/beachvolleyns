@@ -30,17 +30,17 @@ export default function Tournaments({ dbTournaments }: Props) {
   return (
     <section
       id="tournaments"
-      className="py-20 lg:py-28 relative overflow-hidden"
+      className="py-10 lg:py-16 scroll-mt-20 relative overflow-hidden"
       style={{ background: 'linear-gradient(180deg, #FEF9EC 0%, #F5E6C8 100%)' }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-14">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start mb-14">
           <div>
             <div className="flex items-center gap-3 mb-4">
               <div className="w-8 h-0.5 bg-ocean" aria-hidden="true" />
               <span
-                className="text-ocean text-sm font-bold uppercase tracking-widest"
+                className="text-ocean text-base font-bold uppercase tracking-widest"
                 style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
               >
                 {tn.sectionLabel}

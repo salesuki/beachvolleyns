@@ -10,14 +10,14 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="py-20 lg:py-28 bg-cream">
+    <section id="faq" className="py-10 lg:py-16 scroll-mt-20 bg-cream">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="w-8 h-0.5 bg-gold" aria-hidden="true" />
             <span
-              className="text-ocean text-sm font-bold uppercase tracking-widest"
+              className="text-ocean text-base font-bold uppercase tracking-widest"
               style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
             >
               {faq.sectionLabel}

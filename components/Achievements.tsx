@@ -12,7 +12,7 @@ export default function Achievements() {
   return (
     <section
       id="achievements"
-      className="py-20 lg:py-28 relative overflow-hidden"
+      className="py-16 lg:py-20 scroll-mt-20 relative overflow-hidden"
       style={{ background: 'linear-gradient(135deg, #202657 0%, #1b7eb2 60%, #3093cb 100%)' }}
     >
       {/* Decorative sand wave top */}
@@ -32,7 +32,7 @@ export default function Achievements() {
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="w-8 h-0.5 bg-gold" aria-hidden="true" />
             <span
-              className="text-gold text-sm font-bold uppercase tracking-widest"
+              className="text-gold text-base font-bold uppercase tracking-widest"
               style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
             >
               {a.sectionLabel}

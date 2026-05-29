@@ -22,6 +22,7 @@ export default function Hero() {
         muted
         loop
         playsInline
+        poster="/images/img1.jpg"
         className="absolute inset-0 w-full h-full object-cover"
         aria-hidden="true"
       >
@@ -30,7 +31,7 @@ export default function Hero() {
 
       {/* Gradient overlay */}
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 pointer-events-none"
         style={{
           background: 'linear-gradient(to bottom, rgba(32,38,87,0.65) 0%, rgba(27,126,178,0.45) 50%, rgba(32,38,87,0.80) 100%)',
         }}
@@ -38,7 +39,7 @@ export default function Hero() {
       />
 
       {/* Wave bottom */}
-      <div className="absolute bottom-0 left-0 right-0" aria-hidden="true">
+      <div className="absolute bottom-0 left-0 right-0 pointer-events-none" aria-hidden="true">
         <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full block" style={{ height: '80px' }}>
           <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#FFFDF7" />
         </svg>

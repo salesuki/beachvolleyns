@@ -90,9 +90,9 @@ export default function Hero() {
                 line
               ) : (
                 <>
-                  <span className="text-gold">{line.split(' ').slice(0, 2).join(' ')}</span>
+                  <span className="text-white">{line.split(' ').slice(0, 1).join(' ')}</span>
                   {' '}
-                  <span className="text-white">{line.split(' ').slice(2).join(' ')}</span>
+                  <span className="text-gold">{line.split(' ').slice(1).join(' ')}</span>
                 </>
               )}
             </span>

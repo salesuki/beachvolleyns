@@ -24,6 +24,7 @@ export type GalleryImage = {
   url: string;
   alt_sr: string | null;
   alt_en: string | null;
+  category: 'turniri' | 'treninzi' | 'ekipa' | null;
   display_order: number;
   created_at: string;
 };

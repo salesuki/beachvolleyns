@@ -10,6 +10,7 @@ function AddImageModal({ onAdd, onClose }: { onAdd: (img: GalleryImage) => void;
   const [url, setUrl] = useState('');
   const [altSr, setAltSr] = useState('');
   const [altEn, setAltEn] = useState('');
+  const [category, setCategory] = useState<string>('');
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState('');
   const fileRef = useRef<HTMLInputElement>(null);
@@ -21,7 +22,7 @@ function AddImageModal({ onAdd, onClose }: { onAdd: (img: GalleryImage) => void;
   const saveImage = async (imageUrl: string) => {
     const { data, error: err } = await supabase
       .from('gallery_images')
-      .insert({ url: imageUrl, alt_sr: altSr || null, alt_en: altEn || null, display_order: 99 })
+      .insert({ url: imageUrl, alt_sr: altSr || null, alt_en: altEn || null, category: (category || null) as GalleryImage['category'], display_order: 99 })
       .select()
       .single();
     if (err || !data) { setError('Greška pri čuvanju.'); setUploading(false); return; }
@@ -102,6 +103,16 @@ function AddImageModal({ onAdd, onClose }: { onAdd: (img: GalleryImage) => void;
               </div>
             </form>
           )}
+
+          <div>
+            <label style={labelStyle}>Kategorija</label>
+            <select style={inputStyle} value={category} onChange={e => setCategory(e.target.value)}>
+              <option value="">— Bez kategorije</option>
+              <option value="turniri">Turniri</option>
+              <option value="treninzi">Treninzi</option>
+              <option value="ekipa">Ekipa</option>
+            </select>
+          </div>
 
           <div className="grid grid-cols-2 gap-3">
             <div>

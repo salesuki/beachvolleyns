@@ -20,6 +20,12 @@ export default async function Home() {
     .eq('active', true)
     .order('display_order', { ascending: true });
 
+  const { data: galleryImages } = await supabase
+    .from('gallery_images')
+    .select('*')
+    .order('display_order', { ascending: true })
+    .limit(9);
+
   return (
     <>
       <Navbar />
@@ -30,7 +36,7 @@ export default async function Home() {
         <Training />
         <Tournaments dbTournaments={tournaments ?? []} />
         <Teams />
-        <Gallery />
+        <Gallery dbImages={galleryImages ?? []} />
         <FAQ />
         <Contact />
       </main>

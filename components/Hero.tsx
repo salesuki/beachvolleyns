@@ -2,9 +2,17 @@
 
 import { useLanguage } from '@/contexts/LanguageContext';
 import { ChevronDown } from 'lucide-react';
+import { useEffect, useRef } from 'react';
 
 export default function Hero() {
   const { t } = useLanguage();
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    video.play().catch(() => {/* autoplay blocked — video stays paused */});
+  }, []);
 
   const scrollToAbout = () => {
     document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
@@ -18,6 +26,7 @@ export default function Hero() {
     <section className="relative h-screen min-h-[600px] max-h-[900px] overflow-hidden flex items-center justify-center">
       {/* Video background */}
       <video
+        ref={videoRef}
         autoPlay
         muted
         loop

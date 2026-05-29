@@ -11,7 +11,20 @@ export default function Hero() {
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
-    video.play().catch(() => {/* autoplay blocked — video stays paused */});
+
+    const tryPlay = () => { video.play().catch(() => {}); };
+
+    // Try immediately
+    tryPlay();
+
+    // Retry on first user interaction (iOS Safari requires this)
+    document.addEventListener('touchstart', tryPlay, { once: true, passive: true });
+    document.addEventListener('scroll', tryPlay, { once: true, passive: true });
+
+    return () => {
+      document.removeEventListener('touchstart', tryPlay);
+      document.removeEventListener('scroll', tryPlay);
+    };
   }, []);
 
   const scrollToAbout = () => {

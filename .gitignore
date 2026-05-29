@@ -40,7 +40,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Large media files — host on Supabase Storage instead
-public/hero.mp4
-public/*.mp4
+# Large media files (original drone footage — too big for git)
 public/*.mov
